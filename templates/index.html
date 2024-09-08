@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>todo list</h1>
+<form action="/" method="GET">
+    <input name="task" placeholder="task" type="text">
+    <button type="submit">add</button>
+</form>
+
+<form action="/" method="POST">
+    <ul>
+        {% for task in tasks %} 
+            <li type="none">
+                <input type="checkbox" name="taskID" value="{{task[0]}}"> {{task[1]}}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button name="submit">completed</button>
+</form>
+
+
+{% endblock %}
